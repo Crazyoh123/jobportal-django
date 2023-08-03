@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ job.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        .job-info {
+            margin-top: 20px;
+        }
+        .btn-back {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ job.title }}</h1>
+        <p class="text-muted">{{ job.company_name }}</p>
+        <div class="job-info">
+            <h4>Qualification:</h4>
+            <p>{{ job.qualification }}</p>
+            <h4>Description:</h4>
+            <p>{{ job.description }}</p>
+            <h4>Salary:</h4>
+            <p>${{ job.salary }}</p>
+            <h4>Location:</h4>
+            <p>{{ job.location }}</p>
+            <h4>Application Deadline:</h4>
+            <p>{{ job.application_deadline }}</p>
+        </div>
+        <a href="{% url 'job_list' %}" class="btn btn-back btn-secondary">Back to Job List</a>
+    </div>
+</body>
+</html>
